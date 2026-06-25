@@ -20,3 +20,6 @@ export const SwitchInput: DefineComponent<{}, {}, any>;
 export const TextareaInput: DefineComponent<{}, {}, any>;
 export const TextInput: DefineComponent<{}, {}, any>;
 export const TimeInput: DefineComponent<{}, {}, any>;
+
+// Layouts
+export const MasterLayout: DefineComponent<{}, {}, any>;

@@ -18,3 +18,6 @@ export { default as SwitchInput } from "./components/FormComponents/SwitchInput.
 export { default as TextareaInput } from "./components/FormComponents/TextareaInput.vue";
 export { default as TextInput } from "./components/FormComponents/TextInput.vue";
 export { default as TimeInput } from "./components/FormComponents/TimeInput.vue";
+
+// Layouts
+export { default as MasterLayout } from "./components/Layouts/MasterLayout.vue";
