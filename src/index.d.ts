@@ -1,7 +1,5 @@
 import { DefineComponent } from "vue";
 
-import { DefineComponent } from "vue";
-
 export const CheckboxInput: DefineComponent<{}, {}, any>;
 export const ColorPickerInput: DefineComponent<{}, {}, any>;
 export const CommandPaletteInput: DefineComponent<{}, {}, any>;
