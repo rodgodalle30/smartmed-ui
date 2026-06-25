@@ -1,8 +1,9 @@
 {
   "name": "smartmed-ui",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "Reusable UI components, layouts, and design system for SmartMed applications.",
   "main": "./src/index.js",
+  "types": "./src/index.d.ts",
   "keywords": [],
   "author": "SMARTMED",
   "license": "ISC",
@@ -15,6 +16,8 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.7",
-    "vite": "^6.4.3"
+    "typescript": "^6.0.3",
+    "vite": "^6.4.3",
+    "vue-tsc": "^3.3.5"
   }
 }
