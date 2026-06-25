@@ -10,6 +10,9 @@
   "peerDependencies": {
     "vue": "^3.4.29"
   },
+  "dependencies": {
+    "signature_pad": "^5.0.7"
+  },
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.7",
     "vite": "^6.4.3"
