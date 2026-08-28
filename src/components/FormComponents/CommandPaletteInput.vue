@@ -220,7 +220,6 @@ const filteredData = computed(() => {
   return options.filter((option) => {
     const value =
       option?.[props.referenceColumn]?.toString().toLowerCase() || "";
-    console.log(query.value);
     return value.includes((query.value || "").toString().toLowerCase());
   });
 });

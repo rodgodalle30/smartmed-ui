@@ -94,7 +94,6 @@ import {
   Combobox,
   ComboboxButton,
   ComboboxInput,
-  ComboboxLabel,
   ComboboxOption,
   ComboboxOptions,
 } from "@headlessui/vue";
@@ -146,15 +145,11 @@ const displayLabel = (option) => option?.[props.referenceColumn] || "";
   }, { immediate: true }) */
 
 const handleChange = (newValue) => {
-  /*   query.value = event.target.value;
-  console.log('event', event); */
-  console.log("newvalue", newValue);
+  /*   query.value = event.target.value; */
   selectedValue.value = newValue;
   query.value = ""; // reset the query
 
   if (props.column?.has_child_data == 1) {
-    console.log("changed - clearing child");
-
     emit("clear-child", props.column.column_name, props.column);
   }
 
