@@ -21,3 +21,13 @@ export { default as TimeInput } from "./components/FormComponents/TimeInput.vue"
 
 // Layouts
 export { default as MasterLayout } from "./components/Layouts/MasterLayout.vue";
+
+// Main Components
+export { default as MarqueeText } from "./components/MainComponents/MarqueeText.vue";
+
+// Constants
+export { default as columnsDateFormat } from "./constants/columnsDateFormat.js";
+
+// Directives
+import "./styles/main.css";
+export { vMarquee } from "./directives/marquee.js";

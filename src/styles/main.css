@@ -1,0 +1,24 @@
+.marquee-text {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.marquee-text.marquee-active {
+  animation: marquee-scroll 6s ease-in-out infinite;
+}
+
+@keyframes marquee-scroll {
+  0%,
+  15% {
+    transform: translateX(0);
+  }
+
+  50%,
+  65% {
+    transform: translateX(var(--marquee-distance));
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}

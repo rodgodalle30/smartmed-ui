@@ -23,3 +23,12 @@ export const TimeInput: DefineComponent<{}, {}, any>;
 
 // Layouts
 export const MasterLayout: DefineComponent<{}, {}, any>;
+
+// Main Components
+export const MarqueeText: DefineComponent<{}, {}, any>;
+
+// Constants
+export const columnsDateFormat: string[];
+
+// Directives
+export const vMarquee: any;
