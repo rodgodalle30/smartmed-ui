@@ -21,6 +21,10 @@ export const TextareaInput: DefineComponent<{}, {}, any>;
 export const TextInput: DefineComponent<{}, {}, any>;
 export const TimeInput: DefineComponent<{}, {}, any>;
 
+// Templates
+export const NotificationContainer: DefineComponent<{}, {}, any>;
+export const NotificationAlert: DefineComponent<{}, {}, any>;
+
 // Layouts
 export const MasterLayout: DefineComponent<{}, {}, any>;
 
@@ -32,3 +36,6 @@ export const columnsDateFormat: string[];
 
 // Directives
 export const vMarquee: any;
+
+// Composables
+export const useNotification: any;
