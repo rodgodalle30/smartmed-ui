@@ -40,3 +40,6 @@ export const vMarquee: any;
 // Composables
 export const useNotification: any;
 export const useSystems: any;
+
+// Utils
+export const generateUUID: any;
