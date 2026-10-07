@@ -1,19 +1,14 @@
 <template>
   <header
     :class="[
-      'relative w-full border-b border-gray-200/80 bg-white',
+      'smartmed-page-title w-full border-b border-gray-200 bg-white',
       sticky ? 'sticky top-0 z-30 bg-white/95 backdrop-blur' : '',
     ]"
   >
-    <div
-      class="absolute inset-y-0 left-0 w-1 bg-[var(--system-color)]"
-      aria-hidden="true"
-    />
-
-    <div class="px-5 py-4 sm:px-6 lg:px-8">
+    <div class="px-5 py-4 sm:px-6">
       <nav
         v-if="$slots.breadcrumbs"
-        class="mb-2 flex items-center gap-2 overflow-hidden text-xs font-medium text-gray-500"
+        class="mb-1 flex items-center gap-2 overflow-hidden text-xs text-gray-500"
         aria-label="Breadcrumb"
       >
         <slot name="breadcrumbs" />
@@ -36,7 +31,7 @@
           <div class="min-w-0">
             <div class="flex flex-wrap items-center gap-2">
               <h1
-                class="truncate text-lg font-bold tracking-tight text-gray-900 sm:text-xl"
+                class="truncate text-xl font-semibold tracking-tight text-gray-900"
               >
                 {{ pagetitle }}
               </h1>
