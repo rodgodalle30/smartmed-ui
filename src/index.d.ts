@@ -1,5 +1,51 @@
 import { DefineComponent } from "vue";
 
+export interface MasterLayoutUser {
+  name?: string;
+  email?: string;
+  [key: string]: unknown;
+}
+
+export interface MasterLayoutSystem {
+  id?: string | number;
+  href?: string;
+  icon?: unknown;
+  short_name?: string;
+  [key: string]: unknown;
+}
+
+export interface MasterLayoutNavigationItem {
+  id?: string | number;
+  name?: string;
+  icon?: unknown;
+  url_name?: string;
+  has_children?: boolean | number;
+  parent_id?: string | number | null;
+  children?: MasterLayoutNavigationItem[];
+  modules?: MasterLayoutNavigationItem[];
+  [key: string]: unknown;
+}
+
+export interface MasterLayoutProps {
+  navigation?: MasterLayoutNavigationItem[];
+  systems?: MasterLayoutSystem[];
+  user?: MasterLayoutUser;
+  currentPath?: string;
+  activeDomain?: string;
+  appTitle?: string;
+  systemName?: string;
+  organizationName?: string;
+  logoSrc?: string;
+  companyLogoSrc?: string;
+  companyLogoAlt?: string;
+  notificationCount?: number;
+  loaded?: boolean;
+  documentationHref?: string;
+  supportEmail?: string;
+  sidebarStorageKey?: string;
+  initialSidebarExpanded?: boolean;
+}
+
 export const CheckboxInput: DefineComponent<{}, {}, any>;
 export const ColorPickerInput: DefineComponent<{}, {}, any>;
 export const CommandPaletteInput: DefineComponent<{}, {}, any>;
@@ -36,7 +82,7 @@ export const SkeletonLoader: DefineComponent<{}, {}, any>;
 export const Tabs: DefineComponent<{}, {}, any>;
 
 // Layouts
-export const MasterLayout: DefineComponent<{}, {}, any>;
+export const MasterLayout: DefineComponent<MasterLayoutProps, {}, any>;
 export const PageTitle: DefineComponent<{}, {}, any>;
 
 // Main Components

@@ -5,7 +5,7 @@
     <div
       class="flex flex-col items-center justify-center py-24 px-6 text-center max-w-2xl"
     >
-      <p class="text-lg font-bold tracking-widest text-blue-300 uppercase">
+      <p class="text-lg font-bold tracking-widest text-white/70 uppercase">
         {{ eyebrow }}
       </p>
       <h1
@@ -14,7 +14,7 @@
         {{ title }}
       </h1>
       <p
-        class="mt-6 text-xl text-blue-100 sm:text-2xl leading-relaxed max-w-lg mx-auto"
+        class="mt-6 text-xl text-white/80 sm:text-2xl leading-relaxed max-w-lg mx-auto"
       >
         <slot>
           You don't have permission to view this page. Please contact your
@@ -26,7 +26,7 @@
       <div class="mt-12 flex items-center justify-center gap-x-6">
         <a
           :href="actionHref"
-          class="rounded-md bg-white px-6 py-3.5 text-base font-semibold text-[var(--system-color)] shadow-sm hover:bg-blue-50 transition-colors"
+          class="rounded-md bg-white px-6 py-3.5 text-base font-semibold text-[var(--system-color)] shadow-sm hover:bg-[var(--system-color-soft)] transition-colors"
         >
           {{ actionLabel }}
         </a>

@@ -58,13 +58,14 @@
 
               <!-- SIDEBAR CONTENT -->
               <div
-                class="flex grow flex-col overflow-y-auto bg-[#000080] px-3 pb-4 shadow-xl"
+                class="flex grow flex-col overflow-y-auto bg-[var(--system-color)] px-3 pb-4 shadow-xl"
               >
                 <!-- LOGO — match desktop expanded state -->
                 <div
-                  class="h-16 shrink-0 relative flex items-center justify-center border-b border-blue-900/30 bg-[#000080] overflow-hidden"
+                  class="h-16 shrink-0 relative flex items-center justify-center border-b border-black/20 bg-[var(--system-color)] overflow-hidden"
                 >
                   <img
+                    v-if="imageSrc"
                     :src="imageSrc"
                     class="absolute h-16 w-auto object-contain scale-105"
                   />
@@ -182,7 +183,7 @@
                                     :class="
                                       isUrlActive(item.url_name)
                                         ? 'text-gray-600'
-                                        : 'text-blue-300'
+                                        : 'text-white/70'
                                     "
                                   />
                                   <span
@@ -227,7 +228,7 @@
                                             isUrlActive(c.url_name),
                                           )
                                             ? 'text-gray-600'
-                                            : 'text-blue-300'
+                                            : 'text-white/70'
                                         "
                                       />
                                       <span
@@ -245,7 +246,7 @@
                                           isUrlActive(c.url_name),
                                         )
                                           ? 'text-gray-500'
-                                          : 'text-blue-300/70',
+                                          : 'text-white/50',
                                       ]"
                                       viewBox="0 0 20 20"
                                       fill="currentColor"
@@ -274,7 +275,7 @@
                                           :class="
                                             isUrlActive(subItem.url_name)
                                               ? 'bg-gray-500 scale-110'
-                                              : 'bg-blue-400/60'
+                                              : 'bg-white/40'
                                           "
                                         ></span>
                                         <span
@@ -297,13 +298,13 @@
 
                 <!-- FOOTER — match desktop expanded state -->
                 <div
-                  class="shrink-0 border-t border-blue-900/30 bg-[#000080] px-4 py-3 mt-auto flex items-center justify-center"
+                  class="shrink-0 border-t border-black/20 bg-[var(--system-color)] px-4 py-3 mt-auto flex items-center justify-center"
                 >
                   <div class="flex flex-col items-center gap-0.5 text-center">
                     <span
                       class="text-[12px] font-bold text-white/70 tracking-wide uppercase truncate"
                     >
-                      Dadiangas Health Professionals Inc.
+                      {{ organizationName }}
                     </span>
                     <span class="text-[12px] text-white/40 leading-none">
                       © {{ new Date().getFullYear() }} All Rights Reserved
@@ -325,14 +326,15 @@
     >
       <!-- SHELL -->
       <div
-        class="flex flex-col h-full bg-[#000080] border-r border-blue-900/30 overflow-hidden"
+        class="flex flex-col h-full bg-[var(--system-color)] border-r border-black/20 overflow-hidden"
       >
         <!-- LOGO -->
         <div
-          class="h-16 shrink-0 relative flex items-center justify-center border-b border-blue-900/30 bg-[#000080] overflow-hidden"
+          class="h-16 shrink-0 relative flex items-center justify-center border-b border-black/20 bg-[var(--system-color)] overflow-hidden"
         >
           <!-- EXPANDED STATE: object-contain, full logo -->
           <img
+            v-if="imageSrc"
             :src="imageSrc"
             class="absolute h-16 w-auto object-contain scale-105 transition-all duration-300 ease-in-out"
             :class="sidebarDesktopOpen ? 'opacity-100' : 'opacity-0'"
@@ -340,6 +342,7 @@
 
           <!-- COLLAPSED STATE: object-cover object-left, icon crop -->
           <img
+            v-if="imageSrc"
             :src="imageSrc"
             class="h-14 w-10 object-cover object-left scale-110 transition-all duration-300 ease-in-out"
             :class="sidebarDesktopOpen ? 'opacity-0' : 'opacity-100'"
@@ -490,7 +493,7 @@
                                 :class="
                                   isUrlActive(item.url_name)
                                     ? 'text-gray-600'
-                                    : 'text-blue-300'
+                                    : 'text-white/70'
                                 "
                               />
                               <span
@@ -526,7 +529,7 @@
                                       isUrlActive(c.url_name),
                                     )
                                       ? 'bg-gray-200 text-gray-600 border-gray-400'
-                                      : 'text-blue-300 hover:text-white hover:bg-white/5 border-transparent'
+                                      : 'text-white/70 hover:text-white hover:bg-white/5 border-transparent'
                                   "
                                 >
                                   <font-awesome-icon
@@ -550,7 +553,7 @@
                                   :class="
                                     isUrlActive(subItem.url_name)
                                       ? 'bg-gray-200 text-gray-600 border-gray-400'
-                                      : 'text-blue-400/60 hover:text-white hover:bg-white/5 border-transparent'
+                                      : 'text-white/40 hover:text-white hover:bg-white/5 border-transparent'
                                   "
                                 >
                                   <font-awesome-icon
@@ -593,7 +596,7 @@
                                           isUrlActive(c.url_name),
                                         )
                                           ? 'text-gray-600'
-                                          : 'text-blue-300'
+                                          : 'text-white/70'
                                       "
                                     />
                                     <span
@@ -611,7 +614,7 @@
                                         isUrlActive(c.url_name),
                                       )
                                         ? 'text-gray-500'
-                                        : 'text-blue-300/70',
+                                        : 'text-white/50',
                                     ]"
                                     viewBox="0 0 20 20"
                                     fill="currentColor"
@@ -639,7 +642,7 @@
                                         :class="
                                           isUrlActive(subItem.url_name)
                                             ? 'bg-gray-500 scale-110'
-                                            : 'bg-blue-400/60'
+                                            : 'bg-white/40'
                                         "
                                       ></span>
                                       <span
@@ -664,7 +667,7 @@
 
           <!-- FOOTER -->
           <div
-            class="shrink-0 border-t border-blue-900/30 bg-[#000080] transition-all duration-300 flex items-center justify-center"
+            class="shrink-0 border-t border-black/20 bg-[var(--system-color)] transition-all duration-300 flex items-center justify-center"
             :class="sidebarDesktopOpen ? 'px-4 py-3' : 'px-2 py-3'"
           >
             <template v-if="sidebarDesktopOpen">
@@ -672,7 +675,7 @@
                 <span
                   class="text-[12px] font-bold text-white/70 tracking-wide uppercase truncate"
                 >
-                  Dadiangas Health Professionals Inc.
+                  {{ organizationName }}
                 </span>
                 <span class="text-[12px] text-white/40 leading-none">
                   © {{ new Date().getFullYear() }} All Rights Reserved
@@ -706,18 +709,18 @@
         <div class="flex items-center gap-2.5 min-w-0">
           <!-- Mobile sidebar toggle -->
           <button
-            class="lg:hidden p-2 rounded-md hover:bg-[#000080]/10 transition-colors group"
+            class="lg:hidden p-2 rounded-md hover:bg-[var(--system-color-soft)] transition-colors group"
             @click="sidebarOpen = true"
           >
             <Bars3Icon
-              class="h-6 w-6 text-gray-500 group-hover:text-[#000080] transition-colors"
+              class="h-6 w-6 text-gray-500 group-hover:text-[var(--system-color)] transition-colors"
             />
           </button>
 
           <!-- Desktop sidebar toggle -->
           <button
-            class="hidden lg:flex p-2 rounded-md bg-[#000080] hover:bg-[#1e40af] transition-colors"
-            @click="sidebarDesktopOpen = !sidebarDesktopOpen"
+            class="hidden lg:flex p-2 rounded-md bg-[var(--system-color)] hover:bg-[var(--system-color-hover)] transition-colors"
+            @click="toggleDesktopSidebar"
           >
             <svg
               v-if="sidebarDesktopOpen"
@@ -760,15 +763,16 @@
           <!-- SYSTEM INFO -->
           <div class="flex items-center gap-3 min-w-0">
             <img
+              v-if="companyLogoSrc"
               :src="companyLogoSrc"
-              alt="Dadiangas Medical Center Logo"
+              :alt="companyLogoAlt"
               class="w-9 h-9 object-contain shrink-0"
             />
             <div class="flex flex-col min-w-0 leading-tight">
               <span
                 class="text-[13px] font-bold text-gray-800 truncate tracking-wide"
               >
-                DADIANGAS MEDICAL CENTER
+                {{ systemName }}
               </span>
               <span
                 class="text-[10px] font-medium text-gray-400 uppercase tracking-widest truncate"
@@ -783,10 +787,13 @@
         <div class="flex items-center gap-2 shrink-0">
           <!-- Notifications -->
           <button
-            class="relative p-2 rounded-md hover:bg-[#000080]/10 transition-colors group"
+            class="relative p-2 rounded-md hover:bg-[var(--system-color-soft)] transition-colors group"
+            type="button"
+            aria-label="Notifications"
+            @click="emit('notification-click')"
           >
             <BellIcon
-              class="h-6 w-6 text-gray-500 group-hover:text-[#000080] transition-colors"
+              class="h-6 w-6 text-gray-500 group-hover:text-[var(--system-color)] transition-colors"
             />
             <span
               v-if="notificationCount > 0"
@@ -799,11 +806,11 @@
           <!-- HELP -->
           <Menu as="div" class="relative">
             <MenuButton
-              class="p-2 rounded-md hover:bg-[#000080]/10 transition-colors group"
+              class="p-2 rounded-md hover:bg-[var(--system-color-soft)] transition-colors group"
               title="Need help?"
             >
               <QuestionMarkCircleIcon
-                class="h-6 w-6 text-gray-500 group-hover:text-[#000080] transition-colors"
+                class="h-6 w-6 text-gray-500 group-hover:text-[var(--system-color)] transition-colors"
               />
             </MenuButton>
             <transition
@@ -826,12 +833,12 @@
                 <div class="py-1">
                   <MenuItem v-slot="{ active }">
                     <a
-                      href="/docs"
+                      :href="documentationHref"
                       target="_blank"
                       class="flex items-center gap-3 px-4 py-2.5 text-sm transition-colors"
                       :class="
                         active
-                          ? 'bg-[#000080]/10 text-[#000080]'
+                          ? 'bg-[var(--system-color-soft)] text-[var(--system-color)]'
                           : 'text-gray-700'
                       "
                     >
@@ -846,11 +853,11 @@
                   </MenuItem>
                   <MenuItem v-slot="{ active }">
                     <a
-                      href="mailto:support@yourdomain.com"
+                      :href="`mailto:${supportEmail}`"
                       class="flex items-center gap-3 px-4 py-2.5 text-sm transition-colors"
                       :class="
                         active
-                          ? 'bg-[#000080]/10 text-[#000080]'
+                          ? 'bg-[var(--system-color-soft)] text-[var(--system-color)]'
                           : 'text-gray-700'
                       "
                     >
@@ -858,7 +865,7 @@
                       <div>
                         <p class="font-medium leading-none">Contact us</p>
                         <p class="text-[11px] text-gray-400 mt-0.5">
-                          support@yourdomain.com
+                          {{ supportEmail }}
                         </p>
                       </div>
                     </a>
@@ -871,7 +878,7 @@
           <!-- SYSTEM SWITCHER -->
           <Menu as="div" class="relative">
             <MenuButton
-              class="p-2 rounded-md hover:bg-[#000080]/10 transition-colors group"
+              class="p-2 rounded-md hover:bg-[var(--system-color-soft)] transition-colors group"
               title="Switch System"
             >
               <svg
@@ -884,7 +891,7 @@
                 stroke-width="2"
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                class="text-gray-500 group-hover:text-[#000080] transition-colors"
+                class="text-gray-500 group-hover:text-[var(--system-color)] transition-colors"
               >
                 <circle cx="12" cy="5" r="1" />
                 <circle cx="19" cy="5" r="1" />
@@ -921,13 +928,14 @@
                   >
                     <a
                       :href="item.href"
+                      @click="emit('system-select', item)"
                       class="flex flex-col items-center justify-center gap-1 p-2 rounded-lg border transition-colors"
                       :class="
                         activeDomain === item.href
-                          ? 'bg-[#000080] text-white border-[#000080]'
+                          ? 'bg-[var(--system-color)] text-white border-[var(--system-color)]'
                           : active
-                            ? 'bg-[#000080]/10 text-[#000080] border-[#000080]/20'
-                            : 'text-gray-400 border-gray-100 hover:bg-[#000080]/10 hover:text-[#000080] hover:border-[#000080]/20'
+                            ? 'bg-[var(--system-color-soft)] text-[var(--system-color)] border-[var(--system-color-border)]'
+                            : 'text-gray-400 border-gray-100 hover:bg-[var(--system-color-soft)] hover:text-[var(--system-color)] hover:border-[var(--system-color-border)]'
                       "
                     >
                       <font-awesome-icon :icon="item.icon" class="h-4 w-4" />
@@ -949,7 +957,7 @@
           <!-- PROFILE -->
           <Menu as="div" class="relative">
             <MenuButton
-              class="p-2 rounded-md bg-[#000080] hover:bg-[#1e40af] transition-colors"
+              class="p-2 rounded-md bg-[var(--system-color)] hover:bg-[var(--system-color-hover)] transition-colors"
             >
               <span
                 class="flex items-center justify-center h-6 w-6 text-sm font-bold text-white"
@@ -991,7 +999,7 @@
                             ? 'bg-red-50 text-red-600'
                             : 'text-red-500 hover:bg-red-50'
                           : active
-                            ? 'bg-[#000080]/10 text-[#000080]'
+                            ? 'bg-[var(--system-color-soft)] text-[var(--system-color)]'
                             : 'text-gray-700 hover:bg-gray-50'
                       "
                     >
@@ -1028,7 +1036,9 @@
             <!-- CONTENT -->
             <div class="flex-1">
               <div class="mx-auto w-full">
-                <RouterView />
+                <slot>
+                  <RouterView />
+                </slot>
               </div>
             </div>
           </div>
@@ -1037,3 +1047,175 @@
     </div>
   </div>
 </template>
+
+<script setup>
+import { computed, onMounted, ref, watch } from "vue";
+import {
+  Dialog,
+  DialogPanel,
+  Disclosure,
+  DisclosureButton,
+  DisclosurePanel,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuItems,
+  TransitionChild,
+  TransitionRoot,
+} from "@headlessui/vue";
+import {
+  Bars3Icon,
+  BellIcon,
+  BookOpenIcon,
+  EnvelopeIcon,
+  QuestionMarkCircleIcon,
+  XMarkIcon,
+} from "@heroicons/vue/24/outline";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import { getInitials } from "../../utils/text.js";
+
+const props = defineProps({
+  navigation: { type: Array, default: () => [] },
+  systems: { type: Array, default: () => [] },
+  user: { type: Object, default: () => ({}) },
+  currentPath: { type: String, default: "" },
+  activeDomain: { type: String, default: "" },
+  appTitle: { type: String, default: "" },
+  systemName: { type: String, default: "SMARTMED" },
+  organizationName: { type: String, default: "SMARTMED" },
+  logoSrc: { type: String, default: "" },
+  companyLogoSrc: { type: String, default: "" },
+  companyLogoAlt: { type: String, default: "System logo" },
+  notificationCount: { type: Number, default: 0 },
+  loaded: { type: Boolean, default: true },
+  documentationHref: { type: String, default: "/docs" },
+  supportEmail: { type: String, default: "support@smartmed.local" },
+  sidebarStorageKey: {
+    type: String,
+    default: "smartmed:master-layout:sidebar-expanded",
+  },
+  initialSidebarExpanded: { type: Boolean, default: true },
+});
+
+const emit = defineEmits([
+  "logout",
+  "navigate-main",
+  "notification-click",
+  "system-select",
+  "sidebar-change",
+  "content-scroll",
+]);
+
+const sidebarOpen = ref(false);
+const sidebarDesktopOpen = ref(props.initialSidebarExpanded);
+const openCategoryId = ref(null);
+const mainContentRef = ref(null);
+const headerRef = ref(null);
+
+const imageSrc = computed(() => props.logoSrc);
+const companyLogoSrc = computed(() => props.companyLogoSrc);
+const navigation = computed(() => props.navigation);
+const systems = computed(() => props.systems);
+const user = computed(() => props.user);
+const appTitle = computed(() => props.appTitle);
+const systemName = computed(() => props.systemName);
+const organizationName = computed(() => props.organizationName);
+const companyLogoAlt = computed(() => props.companyLogoAlt);
+const notificationCount = computed(() => props.notificationCount);
+const activeDomain = computed(() => props.activeDomain);
+const documentationHref = computed(() => props.documentationHref);
+const supportEmail = computed(() => props.supportEmail);
+const hasLoaded = computed(() => props.loaded);
+const userInitials = computed(() => getInitials(props.user?.name));
+
+const isUrlActive = (url) =>
+  Boolean(url) && Boolean(props.currentPath) && props.currentPath.includes(url);
+
+const findActiveCategoryId = () => {
+  for (const category of props.navigation) {
+    const hasActiveModule = category.modules?.some(
+      (module) =>
+        isUrlActive(module.url_name) ||
+        module.children?.some((child) => isUrlActive(child.url_name)),
+    );
+
+    if (hasActiveModule) return category.id;
+  }
+
+  return null;
+};
+
+const toggleCategory = (id) => {
+  openCategoryId.value = openCategoryId.value === id ? null : id;
+};
+
+const openSidebarToCategory = (categoryId) => {
+  sidebarDesktopOpen.value = true;
+  openCategoryId.value = categoryId;
+  persistSidebarState();
+};
+
+const persistSidebarState = () => {
+  if (!props.sidebarStorageKey || typeof localStorage === "undefined") return;
+
+  try {
+    localStorage.setItem(
+      props.sidebarStorageKey,
+      String(sidebarDesktopOpen.value),
+    );
+  } catch {
+    // Sidebar persistence is optional when browser storage is unavailable.
+  }
+};
+
+const toggleDesktopSidebar = () => {
+  sidebarDesktopOpen.value = !sidebarDesktopOpen.value;
+  persistSidebarState();
+  emit("sidebar-change", sidebarDesktopOpen.value);
+};
+
+const handleCollapsedIconClick = (_item, categoryId) => {
+  openSidebarToCategory(categoryId);
+  emit("sidebar-change", true);
+};
+
+const handleMainScroll = (event) => {
+  emit("content-scroll", event);
+};
+
+const userNavigation = computed(() => [
+  { id: "main", name: "Main Page", action: () => emit("navigate-main") },
+  { id: "logout", name: "Sign out", action: () => emit("logout") },
+]);
+
+onMounted(() => {
+  if (props.sidebarStorageKey && typeof localStorage !== "undefined") {
+    try {
+      const savedState = localStorage.getItem(props.sidebarStorageKey);
+      if (savedState !== null) {
+        sidebarDesktopOpen.value = savedState === "true";
+      }
+    } catch {
+      // Use the supplied initial state when browser storage is unavailable.
+    }
+  }
+
+  openCategoryId.value = findActiveCategoryId();
+});
+
+watch(
+  () => props.currentPath,
+  () => {
+    sidebarOpen.value = false;
+    openCategoryId.value = findActiveCategoryId();
+  },
+);
+
+watch(
+  () => props.navigation,
+  () => {
+    openCategoryId.value = findActiveCategoryId();
+  },
+  { deep: true },
+);
+</script>

@@ -17,7 +17,8 @@
     "@fortawesome/vue-fontawesome": "^3.0.8",
     "@headlessui/vue": "^1.7.23",
     "@heroicons/vue": "^2.1.5",
-    "axios": "^1.7.7"
+    "axios": "^1.7.7",
+    "vue-router": "^4.3.3"
   },
   "dependencies": {
     "signature_pad": "^5.0.7"
