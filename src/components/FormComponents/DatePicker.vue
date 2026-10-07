@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <div class="relative">
     <!-- Trigger input -->
     <div
@@ -7,7 +7,7 @@
         props.disabled ? 'cursor-not-allowed bg-gray-50' : 'cursor-pointer',
         hasError
           ? 'ring-red-300 focus-within:ring-red-500'
-          : 'ring-gray-300 focus-within:ring-[#000080]',
+          : 'ring-gray-300 focus-within:ring-[var(--system-color)]',
       ]"
       @click="!props.disabled && togglePicker()"
     >
@@ -119,11 +119,13 @@
             isDayDisabled(day)
               ? 'text-gray-300 cursor-not-allowed bg-gray-50'
               : isSelectedDay(day)
-                ? 'bg-[#000080] text-white font-semibold'
+                ? 'bg-[var(--system-color)] text-white font-semibold'
                 : isValidPatternDay(day)
                   ? [
-                      'text-gray-900 hover:bg-[#000080]/10 font-medium',
-                      isTodayDay(day) ? 'ring-2 ring-[#000080] ring-inset' : '',
+                      'text-gray-900 hover:bg-[var(--system-color-soft)] font-medium',
+                      isTodayDay(day)
+                        ? 'ring-2 ring-[var(--system-color)] ring-inset'
+                        : '',
                     ]
                   : [
                       'text-gray-300 cursor-not-allowed bg-gray-50',

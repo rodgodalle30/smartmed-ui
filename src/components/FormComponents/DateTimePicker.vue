@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <div class="relative">
     <!-- Trigger input -->
     <div
@@ -7,7 +7,7 @@
         props.disabled ? 'cursor-not-allowed bg-gray-50' : 'cursor-pointer',
         hasError
           ? 'ring-red-300 focus-within:ring-red-500'
-          : 'ring-gray-300 focus-within:ring-[#000080]',
+          : 'ring-gray-300 focus-within:ring-[var(--system-color)]',
       ]"
       @click="!props.disabled && togglePicker()"
     >
@@ -54,7 +54,7 @@
           :class="[
             'flex-1 py-1.5 text-xs font-semibold transition-colors',
             activeTab === 'date'
-              ? 'bg-[#000080] text-white'
+              ? 'bg-[var(--system-color)] text-white'
               : 'text-gray-500 hover:bg-gray-50',
           ]"
         >
@@ -66,7 +66,7 @@
           :class="[
             'flex-1 py-1.5 text-xs font-semibold transition-colors',
             activeTab === 'time'
-              ? 'bg-[#000080] text-white'
+              ? 'bg-[var(--system-color)] text-white'
               : 'text-gray-500 hover:bg-gray-50',
           ]"
         >
@@ -141,12 +141,14 @@
             :class="[
               'text-center text-sm py-1.5 rounded-lg transition-colors',
               isSelectedDay(day)
-                ? 'bg-[#000080] text-white font-semibold'
+                ? 'bg-[var(--system-color)] text-white font-semibold'
                 : isDayDisabled(day)
                   ? 'text-gray-300 cursor-not-allowed bg-gray-50'
                   : [
-                      'text-gray-900 hover:bg-[#000080]/10 font-medium',
-                      isTodayDay(day) ? 'ring-2 ring-[#000080] ring-inset' : '',
+                      'text-gray-900 hover:bg-[var(--system-color-soft)] font-medium',
+                      isTodayDay(day)
+                        ? 'ring-2 ring-[var(--system-color)] ring-inset'
+                        : '',
                     ],
             ]"
           >
@@ -177,7 +179,7 @@
             @blur="onHourBlur"
             @keydown="onTimeKeydown($event, 'hour')"
             @focus="$event.target.select()"
-            class="w-14 h-12 text-center rounded-lg bg-gray-50 ring-1 ring-gray-200 text-xl font-bold text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#000080] border-0 cursor-text"
+            class="w-14 h-12 text-center rounded-lg bg-gray-50 ring-1 ring-gray-200 text-xl font-bold text-gray-900 focus:outline-none focus:ring-2 focus:ring-[var(--system-color)] border-0 cursor-text"
           />
 
           <span class="text-2xl font-bold text-gray-400">:</span>
@@ -193,7 +195,7 @@
             @blur="onMinuteBlur"
             @keydown="onTimeKeydown($event, 'minute')"
             @focus="$event.target.select()"
-            class="w-14 h-12 text-center rounded-lg bg-gray-50 ring-1 ring-gray-200 text-xl font-bold text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#000080] border-0 cursor-text"
+            class="w-14 h-12 text-center rounded-lg bg-gray-50 ring-1 ring-gray-200 text-xl font-bold text-gray-900 focus:outline-none focus:ring-2 focus:ring-[var(--system-color)] border-0 cursor-text"
           />
 
           <!-- AM/PM -->
@@ -204,7 +206,7 @@
               :class="[
                 'px-3 py-1.5 rounded text-xs font-semibold transition-colors',
                 period === 'AM'
-                  ? 'bg-[#000080] text-white'
+                  ? 'bg-[var(--system-color)] text-white'
                   : 'bg-gray-100 text-gray-600 hover:bg-gray-200',
               ]"
             >
@@ -216,7 +218,7 @@
               :class="[
                 'px-3 py-1.5 rounded text-xs font-semibold transition-colors',
                 period === 'PM'
-                  ? 'bg-[#000080] text-white'
+                  ? 'bg-[var(--system-color)] text-white'
                   : 'bg-gray-100 text-gray-600 hover:bg-gray-200',
               ]"
             >
@@ -232,7 +234,7 @@
           :class="[
             'w-full py-2 rounded-lg text-sm font-semibold transition-colors',
             selectedDate
-              ? 'bg-[#000080] text-white hover:bg-[#000066]'
+              ? 'bg-[var(--system-color)] text-white hover:bg-[var(--system-color-hover)]'
               : 'bg-gray-100 text-gray-400 cursor-not-allowed',
           ]"
         >
@@ -347,7 +349,7 @@ watch(activeTab, (val) => {
     });
   }
 });
-// ── Direct input handlers ─────────────────────────────────────
+
 const onHourInput = (e) => {
   const val = e.target.value.replace(/\D/g, "");
   const num = parseInt(val);

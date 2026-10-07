@@ -167,7 +167,7 @@ import {
   TransitionChild,
   TransitionRoot,
 } from "@headlessui/vue";
-import emitter from "@/eventBus";
+import emitter from "../../eventBus.js";
 
 const props = defineProps({
   modelValue: {
