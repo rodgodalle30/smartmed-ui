@@ -25,8 +25,10 @@ export const CommandPaletteWithInfo: DefineComponent<{}, {}, any>;
 // Templates
 export const AccessDenied: DefineComponent<{}, {}, any>;
 export const AlertWithDismissBtn: DefineComponent<{}, {}, any>;
+export const Breadcrumbs: DefineComponent<{}, {}, any>;
 export const Drawer: DefineComponent<{}, {}, any>;
 export const JsonValueViewer: DefineComponent<{}, {}, any>;
+export const Loading: DefineComponent<{}, {}, any>;
 export const NotificationContainer: DefineComponent<{}, {}, any>;
 export const NotificationAlert: DefineComponent<{}, {}, any>;
 export const ShowRecords: DefineComponent<{}, {}, any>;

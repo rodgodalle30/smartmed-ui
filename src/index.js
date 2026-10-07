@@ -23,8 +23,10 @@ export { default as CommandPaletteWithInfo } from "./components/FormInputs/Comma
 // Templates
 export { default as AccessDenied } from "./components/Templates/AccessDenied.vue";
 export { default as AlertWithDismissBtn } from "./components/Templates/AlertWithDismissBtn.vue";
+export { default as Breadcrumbs } from "./components/Templates/Breadcrumbs.vue";
 export { default as Drawer } from "./components/Templates/Drawer.vue";
 export { default as JsonValueViewer } from "./components/Templates/JsonValueViewer.vue";
+export { default as Loading } from "./components/Templates/Loading.vue";
 export { default as NotificationContainer } from "./components/Templates/NotificationContainer.vue";
 export { default as NotificationAlert } from "./components/Templates/NotificationAlert.vue";
 export { default as ShowRecords } from "./components/Templates/ShowRecords.vue";
