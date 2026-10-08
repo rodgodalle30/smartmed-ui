@@ -36,6 +36,7 @@ export { default as Tabs } from "./components/Templates/Tabs.vue";
 // Layouts
 export { default as MasterLayout } from "./components/Layouts/MasterLayout.vue";
 export { default as PageTitle } from "./components/Layouts/PageTitle.vue";
+export { default as TransactionFormLayout } from "./components/Layouts/TransactionFormLayout.vue";
 
 // Main Components
 export { default as ApplicationLogo } from "./components/MainComponents/ApplicationLogo.vue";

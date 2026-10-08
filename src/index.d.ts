@@ -46,6 +46,18 @@ export interface MasterLayoutProps {
   initialSidebarExpanded?: boolean;
 }
 
+export interface TransactionFormLayoutProps {
+  title: string;
+  description?: string;
+  eyebrow?: string;
+  mode?: "create" | "edit" | "view";
+  reference?: string | number;
+  status?: string;
+  backHref?: string;
+  backLabel?: string;
+  compact?: boolean;
+}
+
 export const CheckboxInput: DefineComponent<{}, {}, any>;
 export const ColorPickerInput: DefineComponent<{}, {}, any>;
 export const CommandPaletteInput: DefineComponent<{}, {}, any>;
@@ -84,6 +96,11 @@ export const Tabs: DefineComponent<{}, {}, any>;
 // Layouts
 export const MasterLayout: DefineComponent<MasterLayoutProps, {}, any>;
 export const PageTitle: DefineComponent<{}, {}, any>;
+export const TransactionFormLayout: DefineComponent<
+  TransactionFormLayoutProps,
+  {},
+  any
+>;
 
 // Main Components
 export const ApplicationLogo: DefineComponent<{}, {}, any>;
