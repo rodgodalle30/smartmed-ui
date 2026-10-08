@@ -1,5 +1,6 @@
 <script setup>
 import { computed, useSlots } from "vue";
+import { RouterLink } from "vue-router";
 
 const props = defineProps({
   title: { type: String, required: true },
@@ -42,14 +43,14 @@ const modeClasses = computed(
       v-if="compact"
       class="flex min-h-10 flex-wrap items-center justify-between gap-3 px-1"
     >
-      <a
+      <RouterLink
         v-if="backHref"
-        :href="backHref"
+        :to="backHref"
         class="inline-flex items-center gap-2 text-sm font-medium text-slate-500 transition hover:text-[var(--system-color)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--system-color)]"
       >
         <span aria-hidden="true">←</span>
         {{ backLabel }}
-      </a>
+      </RouterLink>
       <div
         v-if="slots.actions"
         class="ml-auto flex flex-wrap items-center gap-2"
@@ -66,14 +67,14 @@ const modeClasses = computed(
         class="flex flex-col gap-5 px-5 py-5 sm:px-6 lg:flex-row lg:items-start lg:justify-between"
       >
         <div class="min-w-0">
-          <a
+          <RouterLink
             v-if="backHref"
-            :href="backHref"
+            :to="backHref"
             class="mb-3 inline-flex items-center gap-2 text-sm font-medium text-slate-500 transition hover:text-[var(--system-color)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--system-color)]"
           >
             <span aria-hidden="true">←</span>
             {{ backLabel }}
-          </a>
+          </RouterLink>
 
           <p
             class="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--system-color)]"
