@@ -5,6 +5,7 @@ export { default as DateInput } from "./components/FormComponents/DateInput.vue"
 export { default as DatePicker } from "./components/FormComponents/DatePicker.vue";
 export { default as DateTimeInput } from "./components/FormComponents/DateTimeInput.vue";
 export { default as DateTimePicker } from "./components/FormComponents/DateTimePicker.vue";
+export { default as DepartmentSelect } from "./components/FormComponents/DepartmentSelect.vue";
 export { default as DropdownInput } from "./components/FormComponents/DropdownInput.vue";
 export { default as EmailInput } from "./components/FormComponents/EmailInput.vue";
 export { default as FileInput } from "./components/FormComponents/FileInput.vue";

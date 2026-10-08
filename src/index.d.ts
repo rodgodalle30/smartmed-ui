@@ -58,6 +58,28 @@ export interface TransactionFormLayoutProps {
   compact?: boolean;
 }
 
+export interface DepartmentOption {
+  id: string | number;
+  name: string;
+  is_active?: boolean | number;
+  mdivisions?: { name?: string } | null;
+  division?: { name?: string } | null;
+  [key: string]: unknown;
+}
+
+export interface DepartmentSelectProps {
+  modelValue?: string | number | null;
+  departments?: DepartmentOption[];
+  label?: string;
+  placeholder?: string;
+  hint?: string;
+  error?: string;
+  disabled?: boolean;
+  loading?: boolean;
+  required?: boolean;
+  allowUnassigned?: boolean;
+}
+
 export const CheckboxInput: DefineComponent<{}, {}, any>;
 export const ColorPickerInput: DefineComponent<{}, {}, any>;
 export const CommandPaletteInput: DefineComponent<{}, {}, any>;
@@ -65,6 +87,7 @@ export const DateInput: DefineComponent<{}, {}, any>;
 export const DatePicker: DefineComponent<{}, {}, any>;
 export const DateTimeInput: DefineComponent<{}, {}, any>;
 export const DateTimePicker: DefineComponent<{}, {}, any>;
+export const DepartmentSelect: DefineComponent<DepartmentSelectProps, {}, any>;
 export const DropdownInput: DefineComponent<{}, {}, any>;
 export const EmailInput: DefineComponent<{}, {}, any>;
 export const FileInput: DefineComponent<{}, {}, any>;
