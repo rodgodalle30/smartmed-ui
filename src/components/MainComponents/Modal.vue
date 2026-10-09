@@ -49,7 +49,7 @@ const props = defineProps({
   closeable: { type: Boolean, default: true },
   title: { type: String, default: "" }, // for aria-labelledby
   hideBackdrop: { type: Boolean, default: false },
-  backdropClass: { type: String, default: "bg-gray-500/75 backdrop-blur-sm" },
+  backdropClass: { type: String, default: "bg-slate-950/40 backdrop-blur-sm" },
 });
 
 const emit = defineEmits(["close"]);
