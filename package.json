@@ -1,6 +1,6 @@
 {
   "name": "@smartmed/ui",
-  "version": "1.3.1",
+  "version": "1.4.0",
   "description": "Reusable UI components, layouts, and design system for SmartMed applications.",
   "main": "./src/index.js",
   "types": "./src/index.d.ts",

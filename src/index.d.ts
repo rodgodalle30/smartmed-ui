@@ -124,6 +124,15 @@ export const TransactionFormLayout: DefineComponent<
   {},
   any
 >;
+export const HorizontalFormLayout: DefineComponent<
+  {
+    as?: string;
+    labelMinWidth?: string;
+    labelMaxWidth?: string;
+  },
+  {},
+  any
+>;
 
 // Main Components
 export const ApplicationLogo: DefineComponent<{}, {}, any>;
