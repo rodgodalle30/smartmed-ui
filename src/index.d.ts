@@ -80,6 +80,18 @@ export interface DepartmentSelectProps {
   allowUnassigned?: boolean;
 }
 
+export interface SignaturePadProps {
+  modelValue?: string | null;
+  label?: string;
+  hint?: string;
+  error?: string;
+  disabled?: boolean;
+  required?: boolean;
+  height?: string;
+  penColor?: string;
+  backgroundColor?: string;
+}
+
 export const CheckboxInput: DefineComponent<{}, {}, any>;
 export const ColorPickerInput: DefineComponent<{}, {}, any>;
 export const CommandPaletteInput: DefineComponent<{}, {}, any>;
@@ -96,7 +108,7 @@ export const NumberInput: DefineComponent<{}, {}, any>;
 export const PasswordInput: DefineComponent<{}, {}, any>;
 export const PriceInput: DefineComponent<{}, {}, any>;
 export const RadioInput: DefineComponent<{}, {}, any>;
-export const SignaturePad: DefineComponent<{}, {}, any>;
+export const SignaturePad: DefineComponent<SignaturePadProps, {}, any>;
 export const SwitchInput: DefineComponent<{}, {}, any>;
 export const TextareaInput: DefineComponent<{}, {}, any>;
 export const TextInput: DefineComponent<{}, {}, any>;
