@@ -174,6 +174,11 @@ export const useSystems: any;
 // Utils
 export const generateUUID: any;
 export const getInitials: (name: unknown) => string;
+export const getAllPermissions: (access: unknown) => string[];
+export const hasSystemPermission: (
+  access: unknown,
+  systemName: unknown,
+) => boolean;
 export const DEFAULT_SYSTEM_COLOR: string;
 export const applySystemTheme: (color?: string | null) => void;
 export const cacheSystemColor: (color: string) => void;

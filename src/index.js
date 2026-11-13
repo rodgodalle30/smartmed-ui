@@ -70,6 +70,10 @@ export { useSystems } from "./composables/useSystems.js";
 export { generateUUID } from "./utils/uuid.js";
 export { getInitials } from "./utils/text.js";
 export {
+  getAllPermissions,
+  hasSystemPermission,
+} from "./utils/systemAccess.js";
+export {
   DEFAULT_SYSTEM_COLOR,
   applySystemTheme,
   cacheSystemColor,
